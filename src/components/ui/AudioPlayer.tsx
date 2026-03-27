@@ -29,7 +29,7 @@ export function AudioPlayer({ chapterId, className }: AudioPlayerProps) {
 
   if (!AUDIO_CHAPTERS.has(chapterId)) return null
 
-  const audioSrc = `${import.meta.env.BASE_URL}audio/Chapter_${chapterId}_Audio.m4a`
+  const audioSrc = `https://pub-93313f49932844ec91bce4fd305df33d.r2.dev/Chapter_${chapterId}_Audio.mp3`
   const percent = duration > 0 ? (currentTime / duration) * 100 : 0
 
   // Restore saved position on load
