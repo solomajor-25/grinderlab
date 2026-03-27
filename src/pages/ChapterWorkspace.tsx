@@ -180,7 +180,7 @@ export function ChapterWorkspace() {
           <Spade className="w-4 h-4" /> Practice
         </Link>
         <a
-          href={`/chapters/chapter-${chapterId}.pdf`}
+          href={`${import.meta.env.BASE_URL}chapters/chapter-${chapterId}.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-secondary text-sm inline-flex items-center gap-1"
