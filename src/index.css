@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-border;
+  }
+
+  .dark * {
+    @apply border-slate-border;
+  }
+
+  .light * {
+    @apply border-ivory-border;
+  }
+
+  body {
+    @apply font-sans antialiased m-0;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  .dark body, .dark {
+    @apply bg-slate-bg text-ink;
+  }
+
+  .light body, .light {
+    @apply bg-ivory-bg text-graphite;
+  }
+
+  :root {
+    --radius: 8px;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-border rounded-full;
+  }
+
+  .light ::-webkit-scrollbar-thumb {
+    @apply bg-ivory-border rounded-full;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-forest;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg p-6 transition-all;
+  }
+
+  .dark .card {
+    @apply bg-slate-surface border border-slate-border;
+  }
+
+  .light .card {
+    @apply bg-ivory-surface border border-ivory-border;
+  }
+
+  .card-hover {
+    @apply card cursor-pointer;
+  }
+
+  .dark .card-hover:hover {
+    @apply border-forest/40 shadow-lg shadow-forest/5;
+  }
+
+  .light .card-hover:hover {
+    @apply border-forest/40 shadow-lg shadow-forest/5;
+  }
+
+  .btn-primary {
+    @apply bg-forest text-white px-4 py-2 rounded-lg font-medium text-[0.9375rem]
+      hover:bg-forest-light active:bg-forest-dark transition-colors
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-medium text-[0.9375rem] border transition-colors;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-slate-card text-ink border-slate-border hover:border-forest/40;
+  }
+
+  .light .btn-secondary {
+    @apply bg-ivory-card text-graphite border-ivory-border hover:border-forest/40;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-2 rounded-lg text-[0.9375rem] transition-colors;
+  }
+
+  .dark .btn-ghost {
+    @apply text-ink/70 hover:bg-slate-card hover:text-ink;
+  }
+
+  .light .btn-ghost {
+    @apply text-graphite/70 hover:bg-ivory-card hover:text-graphite;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[0.75rem] font-medium;
+  }
+
+  .badge-forest { @apply badge bg-forest/15 text-forest-light; }
+  .badge-gold { @apply badge bg-gold/15 text-gold; }
+  .badge-success { @apply badge bg-success/15 text-success; }
+  .badge-warning { @apply badge bg-warning/15 text-warning; }
+  .badge-error { @apply badge bg-error/15 text-error; }
+  .badge-info { @apply badge bg-info/15 text-info; }
+
+  .progress-bar {
+    @apply h-1.5 rounded-full overflow-hidden;
+  }
+
+  .dark .progress-bar { @apply bg-slate-card; }
+  .light .progress-bar { @apply bg-ivory-card; }
+
+  .progress-fill {
+    @apply h-full bg-forest rounded-full transition-all duration-500;
+  }
+
+  .feedback-panel {
+    @apply card border-l-4 animate-slide-up;
+  }
+
+  .feedback-correct {
+    @apply feedback-panel border-l-success bg-success/5;
+  }
+
+  .feedback-incorrect {
+    @apply feedback-panel border-l-error bg-error/5;
+  }
+
+  .feedback-info {
+    @apply feedback-panel border-l-info bg-info/5;
+  }
+
+  .poker-card {
+    @apply inline-flex items-center justify-center font-mono text-[1rem] font-medium
+      bg-white text-graphite rounded px-1.5 py-0.5 shadow-sm border border-gray-200;
+  }
+
+  .poker-card-red {
+    @apply poker-card text-red-600;
+  }
+}
